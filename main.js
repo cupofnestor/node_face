@@ -23,6 +23,7 @@ $(function(){
 		console.log("GO",tg,rq);
 		if(!rq.error){
 			var i = new Image();
+			var c = new Image();
 			var req = rq;
 			req.sources.forEach(function(f,i){
 				f.faceID = i;
@@ -39,7 +40,12 @@ $(function(){
 			
 			//change this to image data
 			
-			r.replace(req).then(function(d){$("body").append(d)});
+			r.replace(req).then(function(d){
+				debugger;
+				var img = new Image();
+				img.src = d;
+				$("body").append(img)
+			});
 			
 		}else{
 			$("body").append("h1").html(rq.error);

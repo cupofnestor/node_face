@@ -5,7 +5,7 @@ var lw = require('lwip');
 var fs = require('fs');
 var debug = false;
 var savedPics = new Array();
-var exp = 16;
+var exp = 32;
 var blur_amt = 12;
 
 //note new node requisites
