@@ -13,6 +13,8 @@ $(function(){
 		tg_dfd.resolve(d);	
 	})
 
+	//get the face
+	// use ../snap?reset=true  to reset the array
 	$.get("../snap", function(d){
 		rq_dfd.resolve(d);
 	})
@@ -26,15 +28,19 @@ $(function(){
 				f.faceID = i;
 			})
 
-			req.tgImageID=0;
+			req.tgImageID=1;
 
 
-			i.src = req.sources[0].face;
+			i.src = req.sources[0].image;
 			
 			$("body").append(i);
 
 			r = new replacer(tg);
+			
+			//change this to image data
+			
 			r.replace(req).then(function(d){$("body").append(d)});
+			
 		}else{
 			$("body").append("h1").html(rq.error);
 		}
