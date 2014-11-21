@@ -1,0 +1,15 @@
+{
+  "origin": "client",
+  "ext": "jpg",
+  "command": "replace",
+  "tgImageID": null,
+  "dir": "/var/folders/pg/s_cjgh0x2d52ykp_zc12v9540000gn/T/",
+  "processedImage": null,
+  "sources": [
+    {
+      "filename": "tmp-1154559gwr8g",
+      "faceID": null,
+      "path": "/var/folders/pg/s_cjgh0x2d52ykp_zc12v9540000gn/T/tmp-1154559gwr8g.png"
+    }
+  ]
+}

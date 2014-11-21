@@ -1,0 +1,15 @@
+{
+  "img_uri": "0_lifering0.jpg",
+  "img_size": {
+    "width": 768,
+    "height": 1024
+  },
+  "faces": [
+    {
+      "x": 319,
+      "y": 390,
+      "width": 138,
+      "height": 138
+    }
+  ]
+}

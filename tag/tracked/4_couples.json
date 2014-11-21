@@ -1,0 +1,33 @@
+{
+  "img_uri": "4_couples.jpg",
+  "img_size": {
+    "width": 955,
+    "height": 768
+  },
+  "faces": [
+    {
+      "x": 240,
+      "y": 23,
+      "width": 64,
+      "height": 64
+    },
+    {
+      "x": 390,
+      "y": 84,
+      "width": 56,
+      "height": 56
+    },
+    {
+      "x": 526,
+      "y": 57,
+      "width": 72,
+      "height": 72
+    },
+    {
+      "x": 665,
+      "y": 120,
+      "width": 57,
+      "height": 57
+    }
+  ]
+}

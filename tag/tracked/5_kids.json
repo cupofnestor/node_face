@@ -1,0 +1,33 @@
+{
+  "img_uri": "5_kids.jpg",
+  "img_size": {
+    "width": 768,
+    "height": 960
+  },
+  "faces": [
+    {
+      "x": 104,
+      "y": 316,
+      "width": 84,
+      "height": 84
+    },
+    {
+      "x": 238,
+      "y": 348,
+      "width": 84,
+      "height": 84
+    },
+    {
+      "x": 424,
+      "y": 367,
+      "width": 86,
+      "height": 86
+    },
+    {
+      "x": 597,
+      "y": 271,
+      "width": 91,
+      "height": 91
+    }
+  ]
+}

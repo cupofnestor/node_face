@@ -1,0 +1,27 @@
+{
+  "img_uri": "1_fishing.jpg",
+  "img_size": {
+    "width": 768,
+    "height": 1280
+  },
+  "faces": [
+    {
+      "x": 476,
+      "y": 890,
+      "width": 44,
+      "height": 44
+    },
+    {
+      "x": 513,
+      "y": 115,
+      "width": 118,
+      "height": 118
+    },
+    {
+      "x": 198,
+      "y": 104,
+      "width": 111,
+      "height": 111
+    }
+  ]
+}

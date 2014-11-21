@@ -1,0 +1,21 @@
+{
+  "img_uri": "2_crew copy.jpg",
+  "img_size": {
+    "width": 768,
+    "height": 1216
+  },
+  "faces": [
+    {
+      "x": 608,
+      "y": 217,
+      "width": 105,
+      "height": 105
+    },
+    {
+      "x": 204,
+      "y": 212,
+      "width": 118,
+      "height": 118
+    }
+  ]
+}
