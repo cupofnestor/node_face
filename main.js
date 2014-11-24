@@ -32,7 +32,7 @@ $(function(){
 			req.tgImageID=1;
 
 
-			i.src = req.sources[0].image;
+			i.src = req.sources[0].face;
 			
 			$("body").append(i);
 
@@ -44,7 +44,8 @@ $(function(){
 				debugger;
 				var img = new Image();
 				img.src = d;
-				$("body").append(img)
+				$("body").append(img);
+			
 			});
 			
 		}else{
