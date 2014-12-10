@@ -21,29 +21,28 @@ $(function(){
 
 	function go(tg,rq){
 		console.log("GO",tg,rq);
+
 		if(!rq.error){
-			var i = new Image();
+			var im = new Image();
 			var c = new Image();
 			var req = rq;
 			req.sources.forEach(function(f,i){
 				f.faceID = i;
+						im.src = req.sources[i].face;
+
+					//	$("body").append(im);
 			})
 
-			req.tgImageID=1;
-
-
-			i.src = req.sources[0].face;
-			
-			$("body").append(i);
-
+			req.tgImageID=2;
 			r = new replacer(tg);
 			
 			//change this to image data
 			
 			r.replace(req).then(function(d){
-				debugger;
+
 				var img = new Image();
-				img.src = d;
+				img.src = d.dataURL;
+				console.log("replaced",d);
 				$("body").append(img);
 			
 			});

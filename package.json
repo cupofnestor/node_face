@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
+    "body-parser": "^1.10.0",
     "canvas": "^1.1.6",
-    "grunt": "^0.4.5",
     "easyimage": "^1.0.3",
+    "grunt": "^0.4.5",
     "grunt-node-webkit-builder": "^0.3.0",
     "jsonfile": "^2.0.0",
     "opencv": "^0.7.0",
-    "tmp": "^0.0.24",
+    "tmp": "0.0.24",
     "when": "^3.5.2"
   },
   "devDependencies": {},
