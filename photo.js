@@ -217,6 +217,10 @@ settings.reset = function(){
 	settings.request.sources = [];
 }
 
+settings.resetLast = function(){
+	settings.request.sources.pop();
+}
+
 //END SETUP STUFF
 
 
@@ -231,6 +235,7 @@ function Photo(){
 }
 
 Photo.prototype.reset = settings.reset;
+Photo.prototype.resetLast = settings.resetLast;
 Photo.prototype.snap = function(){
 
 	var self = this;
