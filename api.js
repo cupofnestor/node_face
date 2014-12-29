@@ -17,9 +17,18 @@ api.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 api.get('/snap', function(req,res){
 
 	if(req.query.reset){
-		p.reset();
+		var r = {"reset":" "};
+		
+		if(req.query.reset = "last") {
+			r.reset = "Last photo";
+			p.resetLast();
+		}else{
+			r.reset = "All photos";
+			p.reset();
+		}
+		
 		res.type('json');
-		res.json({"reset":"array"});
+		res.json(r);
 	}else{
 		p.snap().then(function(d){
 			res.type('json');
