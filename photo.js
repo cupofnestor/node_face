@@ -233,6 +233,10 @@ function Photo(){
 	this.flash = new Buffer("flash\r");
 	this.client = dg.createSocket("udp4");
 	
+}
+
+Photo.prototype.calibrate = function(){
+	var dfd = when.defer();
 	tmp.tmpName(function(e,p){
 		if(e){
 			dfd.reject(e);
@@ -241,12 +245,13 @@ function Photo(){
 		var vid = wacaw+" --video --duration=4 "+p;
 		
 		var proc = ex(vid, function(err,so,se){
-
+			dfd.resolve("Video Calibration, 4s");
 			setTimeout(function(){proc.kill("SIGINT")}, 5000);
 		})
 		
 		
 	})
+	return dfd.promise;
 }
 
 Photo.prototype.reset = settings.reset;

@@ -42,6 +42,18 @@ api.get('/snap', function(req,res){
 
 });
 
+api.get('/calibrate', function(req,res){
+
+
+		p.calibrate().then(function(d){
+			res.type('json');
+			res.json(d);
+		});
+	
+
+});
+
+
 api.get('/', function(req,res){
 		res.type('json');
 		res.json({"hello":"world"});
