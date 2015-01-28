@@ -232,6 +232,21 @@ function Photo(){
 	var self = this;
 	this.flash = new Buffer("flash\r");
 	this.client = dg.createSocket("udp4");
+	
+	tmp.tmpName(function(e,p){
+		if(e){
+			dfd.reject(e);
+		}
+		var wacaw = path.resolve("BIN/wacaw");
+		var vid = wacaw+" --video --duration=4 "+p;
+		
+		var proc = ex(vid, function(err,so,se){
+
+			setTimeout(function(){proc.kill("SIGINT")}, 5000);
+		})
+		
+		
+	})
 }
 
 Photo.prototype.reset = settings.reset;
@@ -256,7 +271,7 @@ Photo.prototype.snap = function(){
 		//make the command to capture webcam image
 		var wacaw = path.resolve("BIN/wacaw");
 		var cmd = wacaw+" --png -x 1280 -y 720 "+p;
-		
+
 		//capture an image
 		var proc = ex(cmd, function(err,so,se){
 			if(err){

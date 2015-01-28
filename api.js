@@ -18,8 +18,8 @@ api.get('/snap', function(req,res){
 
 	if(req.query.reset){
 		var r = {"reset":" "};
-		
-		if(req.query.reset = "last") {
+		console.log(req.query.reset);
+		if(req.query.reset == "last") {
 			r.reset = "Last photo";
 			p.resetLast();
 		}else{
