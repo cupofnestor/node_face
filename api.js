@@ -15,7 +15,7 @@ api.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 
 api.get('/snap', function(req,res){
-
+	res.type('json');
 	if(req.query.reset){
 		var r = {"reset":" "};
 		console.log(req.query.reset);
@@ -27,20 +27,37 @@ api.get('/snap', function(req,res){
 			p.reset();
 		}
 		
-		res.type('json');
+		
+		
 		res.json(r);
+	}else 	if(req.query.calibrate){
+		console.log("Calibrating");
+		p.calibrate().then(function(cr){
+			console.log("Calibration complete", cr);
+			p.snap().then(function(sr){
+				res.json(sr);
+			}).catch(function(e){
+				console.log("Snap error", e)
+				res.json({error:e});
+			});
+		});
+
+
+	
 	}else{
 		p.snap().then(function(d){
-			res.type('json');
+	
 			res.json(d);
 		}).catch(function(e){
 
-			res.type('json');
+	
 			res.json({error:e});
 		});
 	}
 
 });
+
+
 
 api.get('/calibrate', function(req,res){
 

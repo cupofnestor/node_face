@@ -242,11 +242,11 @@ Photo.prototype.calibrate = function(){
 			dfd.reject(e);
 		}
 		var wacaw = path.resolve("BIN/wacaw");
-		var vid = wacaw+" --video --duration=4 "+p;
+		var vid = wacaw+" --video --duration=3 "+p;
 		
 		var proc = ex(vid, function(err,so,se){
-			dfd.resolve("Video Calibration, 4s");
-			setTimeout(function(){proc.kill("SIGINT")}, 5000);
+			dfd.resolve("Video Calibration, 3s");
+			proc.kill("SIGINT");
 		})
 		
 		
