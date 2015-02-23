@@ -7,7 +7,21 @@ var debug = false;
 var savedPics = new Array();
 var exp = 48;
 var blur_amt = 12;
+var imgBinary = {
+					"imagesnap":{
+						"bin":path.resolve("BIN/imagesnap"),
+						"args":" -d 'Logitech Camera' "
+					}
+				};
+var usePhotoBinary = "imagesnap";
 
+var vidBinary = {
+					"videosnap":{
+						"bin":path.resolve("BIN/videosnap"),
+						"args":" -t 3 -d 'Logitech Camera' --no-audio -s 120 "
+					}
+				};
+var useVideoBinary = "videosnap";
 //note new node requisites
 //easyimage requires imagemagick from homebrew
 //var rq = require('request');
@@ -242,9 +256,9 @@ Photo.prototype.calibrate = function(){
 			dfd.reject(e);
 		}
 		var wacaw = path.resolve("BIN/wacaw");
-		var vid = wacaw+" --video --duration=3 "+p;
-		
-		var proc = ex(vid, function(err,so,se){
+		var cmd = vidBinary[useVideoBinary].bin+" "+vidBinary[useVideoBinary].args+" "+p+".mov";
+		console.log("Video Command",cmd);
+		var proc = ex(cmd, function(err,so,se){
 			dfd.resolve("Video Calibration, 3s");
 			proc.kill("SIGINT");
 		})
@@ -274,8 +288,10 @@ Photo.prototype.snap = function(){
 		var tmpName = p+".png"
 		
 		//make the command to capture webcam image
-		var wacaw = path.resolve("BIN/wacaw");
-		var cmd = wacaw+" --png -x 1280 -y 720 "+p;
+	
+		var cmd = imgBinary[usePhotoBinary].bin+" "+imgBinary[usePhotoBinary].args+" "+tmpName;
+		console.log("Snap Command: ",cmd);
+		//var cmd = (imgBinary == "imagesnap" )? : imgBinaryPath+" --png -x 1280 -y 720 "+p;
 
 		//capture an image
 		var proc = ex(cmd, function(err,so,se){
